@@ -1,23 +1,41 @@
-const { src, dest, watch, series } = require("gulp");
-const sass = require("gulp-sass");
-const postcss = require("gulp-postcss");
-const cssnano = require("cssnano");
+const { src, dest, watch, series, parallel } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const concat = require("gulp-concat");
 const terser = require("gulp-terser");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const replace = require("gulp-replace");
 const browsersync = require("browser-sync").create();
 
-// Sass Task
+// File paths
+const files = {
+  scssPath: "app/scss/**/*.scss",
+  jsPath: "app/js/**/*.js",
+};
+
+// Sass task: compiles the style.scss file into style.css
 function scssTask() {
-  return src("app/scss/style.scss", { sourcemaps: true })
-    .pipe(sass())
-    .pipe(postcss([cssnano()]))
-    .pipe(dest("dist", { sourcemaps: "." }));
+  return src(files.scssPath, { sourcemaps: true })
+    .pipe(sass()) // compile SCSS to CSS
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(dest("dist/css"));
 }
 
-// JavaScript Task
+// JS task: concatenates and uglifies JS files to script.js
 function jsTask() {
-  return src("app/js/script.js", { sourcemaps: true })
+  return src([files.jsPath], { sourcemaps: true })
+    .pipe(concat("all.js"))
     .pipe(terser())
-    .pipe(dest("dist", { sourcemaps: "." }));
+    .pipe(dest("dist/js"));
+}
+
+// Cachebust
+function cacheBustTask() {
+  var cbString = new Date().getTime();
+  return src(["index.html"])
+    .pipe(replace(/cb=\d+/g, "cb=" + cbString))
+    .pipe(dest("."));
 }
 
 // Browsersync Tasks

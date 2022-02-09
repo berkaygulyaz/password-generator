@@ -1,0 +1,232 @@
+body {
+  background-color: $color-corbeau;
+  font-family: $font-alata;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  .page-title {
+    color: $color-sunglow;
+    font-size: calc(2rem + 2vw);
+    line-height: calc(1rem + 4vw);
+    margin: 0 0 15px;
+  }
+
+  .page-desc {
+    color: $color-white;
+    font-family: "Open Sans", sans-serif;
+    font-size: calc(1rem + 0.5vw);
+    margin-top: 0;
+  }
+
+  .form-inner-wrapper {
+    padding: 50px 15px;
+    position: relative;
+    .copy-feedback {
+      position: absolute;
+      right: 17px;
+      top: 50px;
+      transition: top 0.3s ease-in;
+    }
+    .form-top-section {
+      border-radius: 5px;
+      box-shadow: 0 0 9px 3px rgb(0 0 0 / 64%);
+      position: relative;
+    }
+    input[type="text"] {
+      background-color: $color-grey;
+      border-radius: 5px;
+      border: none;
+      box-sizing: border-box;
+      color: $color-corbeau;
+      color: $color-black;
+      font-size: calc(1.5rem + 1vw);
+      letter-spacing: -2px;
+      outline: none;
+      padding: 30px 80px 30px 45px;
+      width: 100%;
+    }
+
+    .copy-wrapper {
+      background-color: $color-grey;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      bottom: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      padding: 18px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 80px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .form-footer-section {
+    display: flex;
+    flex-direction: row;
+    margin: 55px 0;
+
+    div {
+      &:first-child {
+        position: relative;
+      }
+    }
+
+    .length-display {
+      background: $color-sunglow;
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: $color-corbeau;
+      font-size: 1rem;
+      font-weight: 700;
+      height: 40px;
+      padding: 9px 0;
+      position: absolute;
+      right: 10px;
+      text-align: center;
+      top: 33px;
+      width: 40px;
+    }
+  }
+
+  .form-footer-main-column {
+    width: 50%;
+    label {
+      color: $color-lynx-white;
+      display: block;
+      font-size: 1.2rem;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      border-radius: 10px;
+      margin: 25px 0;
+      width: 85%;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: $color-corbeau;
+        border-radius: 100%;
+        border: 2px solid $color-sunglow;
+        cursor: pointer;
+        height: 30px;
+        margin-top: -14px;
+        position: relative;
+        top: 7px;
+        width: 30px;
+      }
+    }
+
+    input[type="range" i] {
+      background-color: $color-sunglow;
+    }
+  }
+
+  .form-footer-column {
+    display: flex;
+    label {
+      cursor: pointer;
+      margin: 10px 0;
+      position: relative;
+      width: 50%;
+      &::before {
+        background: #0e141f;
+        border-radius: 5px;
+        border: 2px solid $color-sunglow;
+        content: "";
+        display: block;
+        height: 25px;
+        position: absolute;
+        width: 25px;
+        z-index: -1;
+      }
+    }
+    input[type="checkbox"] {
+      opacity: 0;
+    }
+
+    .check {
+      display: block;
+      padding: 0;
+      position: absolute;
+      top: 26px;
+
+      &::before {
+        background: $color-corbeau;
+        content: "";
+        height: 5px;
+        left: 8px;
+        opacity: 0;
+        position: absolute;
+        top: -12px;
+        transform: rotate(-46deg);
+        width: 4px;
+      }
+      &::after {
+        background: $color-corbeau;
+        content: "";
+        height: 15px;
+        left: 15px;
+        opacity: 0;
+        position: absolute;
+        top: -18px;
+        transform: rotate(54deg);
+        width: 4px;
+      }
+    }
+
+    .selected {
+      &::before {
+        background-color: $color-sunglow;
+      }
+
+      .check {
+        &::before {
+          opacity: 1;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    span {
+      padding-left: 30px;
+    }
+  }
+
+  .form-button {
+    text-align: center;
+
+    input {
+      -webkit-appearance: none;
+      background-color: $color-lynx-white;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: calc(1rem + 0.5vw);
+      outline: none;
+      padding: 10px 35px;
+    }
+  }
+
+  .password_strength {
+    background-color: transparent;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    bottom: 0;
+    box-sizing: border-box;
+    cursor: not-allowed;
+    padding: 3px 0;
+    position: absolute;
+    transition: width 0.3s ease-in;
+    width: 0;
+  }
+}

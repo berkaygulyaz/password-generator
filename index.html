@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="dist/style.css?cb=1572492103778">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="dist/css/style.css?cb=1572492103778">
 </head>
+
 <body>
     <main>
-        Berkay
+        <div class="title-wrapper">
+            <h1 class="page-title">Password Generator</h1>
+            <p class="page-desc">Use this tool to instantly create secure, random passwords.</p>
+        </div>
+        <div class="form-wrapper">
+            <div class="form-inner-wrapper">
+                <div class="copy-feedback" style="">
+                    <p>**Copied</p>
+                </div>
+                <form method="post" action="">
+                    <div class="form-top-section"><input type="text" name="" class="passfield" readonly="">
+                        <div class="copy-wrapper" title="Copy Password"><img
+                                src=https://securepass.netlify.app/static/media/copy.58d16222.svg alt="Copy Icon"></div>
+                        <div class="password_strength" style="background-color: red; width: 15%;">
+                        </div>
+                    </div>
+                    <div class="form-footer-section">
+                        <div class="form-footer-main-column"><label>Password Length</label><input type="range" name=""
+                                class="password-length-range" min="6" max="30" step="1" value="16">
+                            <div class="length-display">6</div>
+                        </div>
+                        <div class="form-footer-main-column">
+                            <div class="form-footer-column"><label class="selected"><input type="checkbox" name=""
+                                        checked=""><span>Lowercase</span><span class="check"></span></label><label
+                                    class="selected"><input type="checkbox" name=""
+                                        checked=""><span>Uppercase</span><span class="check"></span></label></div>
+                            <div class="form-footer-column"><label class="selected"><input type="checkbox" name=""
+                                        checked=""><span>Numbers</span><span class="check"></span></label><label
+                                    class="selected"><input type="checkbox" name="" checked=""><span>Symbols</span><span
+                                        class="check"></span></label></div>
+                        </div>
+                    </div>
+                    <div class="form-button"><input type="submit" class="generate-button" value="Generate Password">
+                    </div>
+                </form>
+                <div class="error-wrapper">
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </main>
 
 
-     <!-- JavaScript File -->
-     <script src="dist/script.js?cb=1572492103778"></script>
+    <!-- JavaScript File -->
+    <script src="dist/js/script.js?cb=1572492103778"></script>
 </body>
+
 </html>
