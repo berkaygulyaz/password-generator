@@ -9,18 +9,29 @@ main {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    justify-content: center;
+    align-items: center;
+  }
   .page-title {
     color: $color-sunglow;
-    font-size: calc(2rem + 2vw);
-    line-height: calc(1rem + 4vw);
+    font-size: 30px;
     margin: 0 0 15px;
+    @media #{$mq-992-up} {
+      font-size: calc(2rem + 2vw);
+    }
   }
 
   .page-desc {
     color: $color-white;
-    font-family: "Open Sans", sans-serif;
-    font-size: calc(1rem + 0.5vw);
+    font-size: 20px;
     margin-top: 0;
+    @media #{$mq-992-up} {
+      font-size: calc(1rem + 0.5vw);
+    }
   }
 
   .form-inner-wrapper {
@@ -47,7 +58,8 @@ main {
       font-size: calc(1.5rem + 1vw);
       letter-spacing: -2px;
       outline: none;
-      padding: 30px 80px 30px 45px;
+      padding: 10px 60px 10px 10px;
+      //   padding: 30px 80px 30px 45px;
       width: 100%;
     }
 
@@ -59,11 +71,15 @@ main {
       box-sizing: border-box;
       cursor: pointer;
       display: flex;
-      padding: 18px;
+      padding: 13px;
+      //   padding: 18px;
       position: absolute;
       right: 0;
       top: 0;
       width: 80px;
+      //   @media #{$mq-768-up} {
+      //     width: 80px;
+      //   };
     }
     img {
       width: 100%;
@@ -71,8 +87,12 @@ main {
   }
   .form-footer-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 55px 0;
+
+    @media #{$mq-992-up} {
+      flex-direction: row;
+    }
 
     div {
       &:first-child {
@@ -98,7 +118,8 @@ main {
   }
 
   .form-footer-main-column {
-    width: 50%;
+    width: 100%;
+    // width: 50%;
     label {
       color: $color-lynx-white;
       display: block;
@@ -109,7 +130,10 @@ main {
       -webkit-appearance: none;
       border-radius: 10px;
       margin: 25px 0;
-      width: 85%;
+      width: 90%;
+      @media #{$mq-992-up} {
+        width: 85%;
+      }
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
@@ -199,6 +223,10 @@ main {
     }
     span {
       padding-left: 30px;
+
+      @media #{$mq-992-up} {
+        padding-left: 15px;
+      }
     }
   }
 

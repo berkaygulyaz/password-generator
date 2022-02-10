@@ -28,8 +28,9 @@
                     </div>
                     <div class="form-footer-section">
                         <div class="form-footer-main-column"><label>Password Length</label><input type="range" name=""
-                                class="password-length-range" min="6" max="30" step="1" value="16">
-                            <div class="length-display">6</div>
+                                class="password-length-range" min="6" max="30" step="1" value="15"
+                                oninput="num.value = this.value">
+                            <output class="length-display" id="num">15</output>
                         </div>
                         <div class="form-footer-main-column">
                             <div class="form-footer-column"><label class="selected"><input type="checkbox" name=""
@@ -54,7 +55,7 @@
 
 
     <!-- JavaScript File -->
-    <script src="dist/js/script.js?cb=1572492103778"></script>
+    <script src="dist/js/all.js"></script>
 </body>
 
 </html>
