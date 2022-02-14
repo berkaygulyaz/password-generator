@@ -12,6 +12,21 @@ const copyText = () => {
   }, 2000);
 };
 
+const checkInput = () => {
+  const input = document.querySelectorAll("input[type='checkbox']");
+
+  input.forEach((element) => {
+    element.addEventListener("click", () => {
+      const a = element.parentElement;
+      a.classList.toggle("selected");
+      element.toggleAttribute("checked")
+        ? console.log(a.innerText)
+        : console.log("berkay");
+    });
+  });
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   copyText();
+  checkInput();
 });
