@@ -19,9 +19,8 @@
                 <div class="copy-feedback" style="">
                     <p>**Copied</p>
                 </div>
-                <form method="post" action="">
-                    <div class="form-top-section"><input type="text" name="" class="passfield" readonly=""
-                            value="berkay">
+                <div>
+                    <div class="form-top-section"><input type="text" class="result" id="passfield" readonly value=""></input>
                         <div class="copy-wrapper" title="Copy Password"><img
                                 src=https://securepass.netlify.app/static/media/copy.58d16222.svg alt="Copy Icon"></div>
                         <div class="password_strength" style="background-color: red; width: 15%;">
@@ -29,24 +28,26 @@
                     </div>
                     <div class="form-footer-section">
                         <div class="form-footer-main-column"><label>Password Length</label><input type="range" name=""
-                                class="password-length-range" min="6" max="30" step="1" value="15"
+                                class="password-length-range" min="6" max="20" step="1" value="15"
                                 oninput="num.value = this.value">
                             <output class="length-display" id="num">15</output>
                         </div>
                         <div class="form-footer-main-column">
                             <div class="form-footer-column"><label class="item selected"><input type="checkbox" name=""
-                                        checked><span>Lowercase</span><span class="check"></span></label><label
-                                    class="item selected"><input type="checkbox" name=""
-                                        checked><span>Uppercase</span><span class="check"></span></label></div>
+                                        id="lowercase" checked><span>Lowercase</span><span
+                                        class="check"></span></label><label class="item selected"><input type="checkbox"
+                                        name="" id="uppercase" checked><span>Uppercase</span><span
+                                        class="check"></span></label></div>
                             <div class="form-footer-column"><label class="item selected"><input type="checkbox" name=""
-                                        checked><span>Numbers</span><span class="check"></span></label><label
-                                    class="item selected"><input type="checkbox" name=""
-                                        checked><span>Symbols</span><span class="check"></span></label></div>
+                                        id="numbers" checked><span>Numbers</span><span
+                                        class="check"></span></label><label class="item selected"><input type="checkbox"
+                                        name="" id="symbols" checked><span>Symbols</span><span
+                                        class="check"></span></label></div>
                         </div>
                     </div>
-                    <div class="form-button"><input type="submit" class="generate-button" value="Generate Password">
+                    <div class="form-button"><input type="submit" id="generate" value="Generate Password">
                     </div>
-                </form>
+                </div>
                 <div class="error-wrapper">
                     <p></p>
                 </div>
