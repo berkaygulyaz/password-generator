@@ -8,6 +8,12 @@ const numbersEl = document.getElementById("numbers");
 const symbolsEl = document.getElementById("symbols");
 const generateEl = document.getElementById("generate");
 const clipboard = document.getElementById("clipboard");
+const checkEl = document.querySelectorAll("input[type='checkbox']");
+
+clipboard.addEventListener('click', () => {
+  resultEl.select();
+  navigator.clipboard.writeText(resultEl.value)
+})
 
 generateEl.addEventListener("click", () => {
   const length = +lengthEl.value;
@@ -76,18 +82,10 @@ const randomFunc = {
   symbol: getRandomSymbols,
 };
 
-const checkInput = () => {
-  const input = document.querySelectorAll("input[type='checkbox']");
-
-  input.forEach((element) => {
-    element.addEventListener("click", () => {
-      const a = element.parentElement;
-      a.classList.toggle("selected");
-      element.checked;
-    });
+checkEl.forEach((element) => {
+  element.addEventListener("click", () => {
+    const a = element.parentElement;
+    a.classList.toggle("selected");
+    element.checked;
   });
-};
-
-window.addEventListener("DOMContentLoaded", () => {
-  checkInput();
 });
